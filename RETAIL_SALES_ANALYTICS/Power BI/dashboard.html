@@ -1,0 +1,171 @@
+<h2 class="sr-only">Retail Sales Analytics dashboard summarizing sales, profit, category, sub-category, geographic and discount findings from 2014-2017</h2>
+
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 12px; margin-bottom: 1.5rem;">
+  <div style="background: var(--surface-1); border-radius: var(--radius); padding: 1rem;">
+    <p style="font-size: 13px; color: var(--text-secondary); margin: 0 0 4px;">Total sales</p>
+    <p style="font-size: 24px; font-weight: 500; margin: 0;">$2.30M</p>
+  </div>
+  <div style="background: var(--surface-1); border-radius: var(--radius); padding: 1rem;">
+    <p style="font-size: 13px; color: var(--text-secondary); margin: 0 0 4px;">Total profit</p>
+    <p style="font-size: 24px; font-weight: 500; margin: 0;">$286K</p>
+  </div>
+  <div style="background: var(--surface-1); border-radius: var(--radius); padding: 1rem;">
+    <p style="font-size: 13px; color: var(--text-secondary); margin: 0 0 4px;">Profit margin</p>
+    <p style="font-size: 24px; font-weight: 500; margin: 0;">12.5%</p>
+  </div>
+  <div style="background: var(--surface-1); border-radius: var(--radius); padding: 1rem;">
+    <p style="font-size: 13px; color: var(--text-secondary); margin: 0 0 4px;">Total orders</p>
+    <p style="font-size: 24px; font-weight: 500; margin: 0;">5,009</p>
+  </div>
+  <div style="background: var(--surface-1); border-radius: var(--radius); padding: 1rem;">
+    <p style="font-size: 13px; color: var(--text-secondary); margin: 0 0 4px;">Avg order value</p>
+    <p style="font-size: 24px; font-weight: 500; margin: 0;">$458.61</p>
+  </div>
+</div>
+
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 1.5rem;">
+  <div style="background: var(--surface-2); border: 0.5px solid var(--border); border-radius: 12px; padding: 1rem 1.25rem;">
+    <p style="font-size: 14px; font-weight: 500; margin: 0 0 8px;">Sales vs profit by category</p>
+    <div style="display: flex; gap: 14px; margin-bottom: 6px; font-size: 12px; color: var(--text-secondary);">
+      <span style="display:flex;align-items:center;gap:4px;"><span style="width:10px;height:10px;border-radius:2px;background:#2a78d6;"></span>Sales</span>
+      <span style="display:flex;align-items:center;gap:4px;"><span style="width:10px;height:10px;border-radius:2px;background:#1baf7a;"></span>Profit</span>
+    </div>
+    <div style="position: relative; height: 200px;">
+      <canvas id="catChart" role="img" aria-label="Bar chart comparing sales and profit for Furniture, Office Supplies and Technology. Furniture has similar sales to the other categories but far lower profit.">Category sales/profit: Furniture 742K sales 18K profit, Office Supplies 719K sales 122K profit, Technology 836K sales 145K profit.</canvas>
+    </div>
+  </div>
+
+  <div style="background: var(--surface-2); border: 0.5px solid var(--border); border-radius: 12px; padding: 1rem 1.25rem;">
+    <p style="font-size: 14px; font-weight: 500; margin: 0 0 8px;">Profit by sub-category</p>
+    <div style="position: relative; height: 224px;">
+      <canvas id="subCatChart" role="img" aria-label="Horizontal bar chart of profit by sub-category, sorted lowest to highest. Tables and Bookcases are negative; Copiers is highest.">Tables -17.7K, Bookcases -3.5K, Supplies -1.2K, then rising through Fasteners, Machines, Labels, Art, Envelopes, Furnishings, Appliances, Storage, Chairs, Binders, Paper, Accessories, Phones, Copiers 55.6K.</canvas>
+    </div>
+  </div>
+</div>
+
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 1.5rem;">
+  <div style="background: var(--surface-2); border: 0.5px solid var(--border); border-radius: 12px; padding: 1rem 1.25rem;">
+    <p style="font-size: 14px; font-weight: 500; margin: 0 0 8px;">Profit by state, worst 8</p>
+    <div style="position: relative; height: 200px;">
+      <canvas id="stateChart" role="img" aria-label="Horizontal bar chart of the 8 worst performing states by profit, all negative. Texas is the worst at -25.7K.">Texas -25.7K, Ohio -17.0K, Pennsylvania -15.6K, Illinois -12.6K, North Carolina -7.5K, Colorado -6.5K, Tennessee -5.3K, Arizona -3.4K.</canvas>
+    </div>
+  </div>
+
+  <div style="background: var(--surface-2); border: 0.5px solid var(--border); border-radius: 12px; padding: 1rem 1.25rem;">
+    <p style="font-size: 14px; font-weight: 500; margin: 0 0 8px;">Avg discount: problem areas vs company</p>
+    <div style="position: relative; height: 200px;">
+      <canvas id="discountChart" role="img" aria-label="Bar chart comparing average discount rate for the company overall against Texas, Ohio, Illinois, Sean Miller and the Tables sub-category, all well above the company average of 15.6 percent.">Company average 15.6%, Texas 37.0%, Illinois 39.0%, Ohio 32.5%, Sean Miller 24.7%, Tables 26.1%.</canvas>
+    </div>
+  </div>
+</div>
+
+<div style="background: var(--surface-2); border: 0.5px solid var(--border); border-radius: 12px; padding: 1rem 1.25rem;">
+  <p style="font-size: 14px; font-weight: 500; margin: 0 0 8px;">Yearly sales and profit growth, 2014 to 2017</p>
+  <div style="display: flex; gap: 14px; margin-bottom: 6px; font-size: 12px; color: var(--text-secondary);">
+    <span style="display:flex;align-items:center;gap:4px;"><span style="width:10px;height:10px;border-radius:2px;background:#2a78d6;"></span>Sales</span>
+    <span style="display:flex;align-items:center;gap:4px;"><span style="width:10px;height:2px;background:#1baf7a;"></span>Profit</span>
+  </div>
+  <div style="position: relative; height: 220px;">
+    <canvas id="yearChart" role="img" aria-label="Combo chart of yearly sales as bars and profit as a line from 2014 to 2017, both trending upward, with profit rising even in 2015 when sales were flat.">2014: sales 484K, profit 50K. 2015: sales 471K, profit 62K. 2016: sales 609K, profit 82K. 2017: sales 733K, profit 93K.</canvas>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<script>
+Chart.defaults.font.family = "var(--font-sans)";
+Chart.defaults.color = "#898781";
+
+new Chart(document.getElementById('catChart'), {
+  type: 'bar',
+  data: {
+    labels: ['Furniture', 'Office Supplies', 'Technology'],
+    datasets: [
+      { label: 'Sales', data: [742000, 719000, 836000], backgroundColor: '#2a78d6', borderRadius: 4, maxBarThickness: 22 },
+      { label: 'Profit', data: [18000, 122000, 145000], backgroundColor: '#1baf7a', borderRadius: 4, maxBarThickness: 22 }
+    ]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    plugins: { legend: { display: false } },
+    scales: {
+      y: { beginAtZero: true, grid: { color: '#e1e0d9' }, ticks: { callback: v => '$' + (v/1000) + 'K' } },
+      x: { grid: { display: false } }
+    }
+  }
+});
+
+new Chart(document.getElementById('subCatChart'), {
+  type: 'bar',
+  data: {
+    labels: ['Tables','Bookcases','Supplies','Fasteners','Machines','Labels','Art','Envelopes','Furnishings','Appliances','Storage','Chairs','Binders','Paper','Accessories','Phones','Copiers'],
+    datasets: [{
+      data: [-17725,-3473,-1189,950,3385,5546,6528,6964,13059,18138,21279,26590,30222,34054,41937,44516,55618],
+      backgroundColor: c => c.raw < 0 ? '#e34948' : '#1baf7a',
+      borderRadius: 4, maxBarThickness: 10
+    }]
+  },
+  options: {
+    indexAxis: 'y', responsive: true, maintainAspectRatio: false,
+    plugins: { legend: { display: false } },
+    scales: {
+      x: { grid: { color: '#e1e0d9' }, ticks: { callback: v => '$' + (v/1000) + 'K' } },
+      y: { grid: { display: false }, ticks: { font: { size: 10 } } }
+    }
+  }
+});
+
+new Chart(document.getElementById('stateChart'), {
+  type: 'bar',
+  data: {
+    labels: ['Texas','Ohio','Pennsylvania','Illinois','North Carolina','Colorado','Tennessee','Arizona'],
+    datasets: [{ data: [-25729,-16971,-15560,-12608,-7491,-6528,-5342,-3428], backgroundColor: '#e34948', borderRadius: 4, maxBarThickness: 14 }]
+  },
+  options: {
+    indexAxis: 'y', responsive: true, maintainAspectRatio: false,
+    plugins: { legend: { display: false } },
+    scales: {
+      x: { grid: { color: '#e1e0d9' }, ticks: { callback: v => '$' + (v/1000) + 'K' } },
+      y: { grid: { display: false } }
+    }
+  }
+});
+
+new Chart(document.getElementById('discountChart'), {
+  type: 'bar',
+  data: {
+    labels: ['Company avg','Texas','Illinois','Ohio','Sean Miller','Tables'],
+    datasets: [{
+      data: [15.6, 37.0, 39.0, 32.5, 24.7, 26.1],
+      backgroundColor: c => c.dataIndex === 0 ? '#898781' : '#eda100',
+      borderRadius: 4, maxBarThickness: 26
+    }]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    plugins: { legend: { display: false } },
+    scales: {
+      y: { beginAtZero: true, grid: { color: '#e1e0d9' }, ticks: { callback: v => v + '%' } },
+      x: { grid: { display: false }, ticks: { font: { size: 10 } } }
+    }
+  }
+});
+
+new Chart(document.getElementById('yearChart'), {
+  data: {
+    labels: ['2014','2015','2016','2017'],
+    datasets: [
+      { type: 'bar', label: 'Sales', data: [484247,470533,609206,733215], backgroundColor: '#2a78d6', borderRadius: 4, maxBarThickness: 46, yAxisID: 'y' },
+      { type: 'line', label: 'Profit', data: [49544,61619,81795,93439], borderColor: '#1baf7a', backgroundColor: '#1baf7a', borderWidth: 2, pointRadius: 4, pointBackgroundColor: '#1baf7a', yAxisID: 'y1', tension: 0.3 }
+    ]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    plugins: { legend: { display: false } },
+    scales: {
+      y: { position: 'left', grid: { color: '#e1e0d9' }, ticks: { callback: v => '$' + (v/1000) + 'K' } },
+      y1: { position: 'right', grid: { display: false }, ticks: { callback: v => '$' + (v/1000) + 'K' } },
+      x: { grid: { display: false } }
+    }
+  }
+});
+</script>
