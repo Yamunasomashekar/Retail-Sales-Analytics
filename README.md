@@ -37,4 +37,46 @@ The company had a large amount of raw sales data but lacked clear insights into 
 - Used advanced SQL concepts including CTEs, RANK(), LAG(), and Window Functions.
   <a href="https://github.com/Yamunasomashekar/Retail-Sales-Analytics/blob/main/RETAIL_SALES_ANALYTICS/Dataset/data_dictionary/sql_eda_report.md">sql eda report</a>
 
+  ##  Python EDA
+
+- Used Pandas to explore and analyze the dataset.
+- Performed analysis of sales, profit, customers, products, and time-based trends.
+- Used Matplotlib and Seaborn to create visualizations.
+- Analyzed the relationship between discounts and profit.
+<a href="https://github.com/Yamunasomashekar/Retail-Sales-Analytics/blob/main/RETAIL_SALES_ANALYTICS/Dataset/data_dictionary/python_eda_report.md">python eda report</a>
+
+##  Power BI Dashboard
+
+Created a 5-page interactive Power BI dashboard:
+
+1. Executive Overview – KPIs, sales trends, categories, and regions.
+2. Customer Analysis – Top customers, repeat customers, and segments.
+3. Product Analysis – Top and low-performing products and categories.
+4. Geographic Analysis – Regional, state, and city-level performance.
+5. Profitability Analysis – Sales vs. profit, discounts vs. profit, and loss-making products.
+<a href="https://github.com/Yamunasomashekar/Retail-Sales-Analytics/blob/main/RETAIL_SALES_ANALYTICS/Power%20BI/Retail_Sales_Dashboard.pbix">Retail sales dashboard</a>
+
+##  Key Insights
+
+1. High discounts were strongly linked to lower profits and business losses.
+2. The customer with the highest sales was actually making a loss, showing that high sales do not   
+   always mean high profit.
+3. Texas, Ohio, Pennsylvania, and Illinois were loss-making even though their overall regions were 
+   profitable.
+4. Profit increased in 2015 even though sales remained almost flat, showing improved profitability.
+5. Detailed analysis at the state, customer, and product level revealed problems that were hidden  
+<a href="https://github.com/Yamunasomashekar/Retail-Sales-Analytics/blob/main/RETAIL_SALES_ANALYTICS/Dataset/data_dictionary/business_insights_report.md">business insights report</a>
+
+## Business Recommendations
+
+1. Implement a company-wide discount approval policy (30%/40% thresholds)
+2. Cap discounts specifically on Tables and Bookcases sub-categories
+3. Shift customer prioritization from sales-based to profit-based ranking
+4. Review the Cubify CubeX 3D Printer product line for repricing/discontinuation
+5. Implement state-level discount monitoring for Texas, Ohio, Pennsylvania, Illinois
+
+## Conclusion
+
+This project demonstrates how SQL, Python, and Power BI can be used together to turn raw retail data into useful business insights. The analysis helped identify profitable and loss-making areas and highlighted the impact of discounting on profitability.
+
   
