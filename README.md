@@ -28,3 +28,13 @@ The company had a large amount of raw sales data but lacked clear insights into 
   different products
 - Converted Order Date and Ship Date into proper date formats.
 <a href="https://github.com/Yamunasomashekar/Retail-Sales-Analytics/blob/main/RETAIL_SALES_ANALYTICS/Dataset/data_dictionary/cleaned_data_quality_report.md">cleaned data quality report </a>
+
+## SQL Analysis
+
+- Used SQL Server to analyze the retail sales data.
+- Calculated important KPIs such as Sales, Profit, Orders, Customers, and Average Order Value.
+- Analyzed customers, products, categories, regions, states, and sales trends.
+- Used advanced SQL concepts including CTEs, RANK(), LAG(), and Window Functions.
+  <a href="https://github.com/Yamunasomashekar/Retail-Sales-Analytics/blob/main/RETAIL_SALES_ANALYTICS/Dataset/data_dictionary/sql_eda_report.md">sql eda report</a>
+
+  
