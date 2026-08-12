@@ -15,6 +15,5 @@ The company had a large amount of raw sales data but lacked clear insights into 
 - Find the key factors affecting profitability
 - Provide data-driven business recommendations
 
-## Dataset
-
-<a href="https://github.com/Yamunasomashekar/Retail-Sales-Analytics/blob/main/RETAIL_SALES_ANALYTICS/Dataset/raw_data/SuperstoreSales.csv> Dataset </a>
+## Dataset 
+<a href="https://github.com/Yamunasomashekar/Retail-Sales-Analytics/blob/main/RETAIL_SALES_ANALYTICS/Dataset/raw_data/SuperstoreSales.csv">Dataset</a>
