@@ -17,3 +17,14 @@ The company had a large amount of raw sales data but lacked clear insights into 
 
 ## Dataset 
 <a href="https://github.com/Yamunasomashekar/Retail-Sales-Analytics/blob/main/RETAIL_SALES_ANALYTICS/Dataset/raw_data/SuperstoreSales.csv">Dataset</a>
+
+## Data Cleaning
+
+- Checked the dataset for missing values, duplicates, incorrect formats, and unusual records.
+- Kept 1,871 negative-profit transactions because they represented real business losses.
+- Kept genuine high-value and low-profit outliers instead of removing them.
+- Cleaned 16 Product Name records containing extra spaces.
+- Investigated 32 Product IDs with multiple product names and confirmed they represented  
+  different products
+- Converted Order Date and Ship Date into proper date formats.
+<a href="https://github.com/Yamunasomashekar/Retail-Sales-Analytics/blob/main/RETAIL_SALES_ANALYTICS/Dataset/data_dictionary/cleaned_data_quality_report.md">cleaned data quality report </a>
